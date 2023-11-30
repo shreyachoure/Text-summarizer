@@ -2,8 +2,8 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer
 import streamlit as st
 
 # Path to your fine-tuned model
-model_path = "./Model"
-token_path = "./Model"
+model_path = "./Model/T5"
+token_path = "./Model/T5"
 # Check for GPU availability
 device = "cpu"
 
