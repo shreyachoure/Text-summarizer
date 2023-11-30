@@ -31,16 +31,22 @@ example_conversations = [
         "summary": "#Person2# has trouble breathing. The doctor asks #Person2# about it and will send #Person2# to a pulmonary specialist.",
     },
     {
-        "conversation": """#Person1#: Where are you going for your trip?
-#Person2#: I think Hebei is a good place.
-#Person1#: But I heard the north of China are experiencing severe sandstorms!
-#Person2#: Really?
-#Person1#: Yes, it's said that Hebes was experiencing six degree strong winds.
-#Person2#: How do these storms affect the people who live in these areas?
-#Person1#: The report said the number of people with respiratory tract infections tended to rise after sandstorms. The sand gets into people's noses and throats and creates irritation.
-#Person2#: It sounds that sandstorms are trouble for everybody!
-#Person1#: You are quite right.""",
-        "summary": "#Person2# plans to have a trip in Hebei but #Person1# says there are sandstorms in there.",
+        "conversation": """Person A: Hey, did you hear about that new coffee shop downtown?
+
+Person B: Oh, the one with the funky artwork on the walls?
+
+Person A: Yeah, that's the one! I tried their caramel macchiato yesterday—it was amazing.
+
+Person B: Nice! I'm more of a black coffee person myself. What's the vibe like in there?
+
+Person A: It's pretty chill, actually. They've got this cozy corner with bookshelves and bean bags. Perfect for a lazy Sunday afternoon.
+
+Person B: Sounds like my kind of place. We should check it out together sometime.
+
+Person A: Absolutely! How about this weekend?
+
+Person B: Works for me. Looking forward to it!""",
+        "summary": "",
     },
     {
         "conversation": """#Person1#: What time is it, Tom?
