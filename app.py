@@ -46,7 +46,7 @@ Person B: Sounds like my kind of place. We should check it out together sometime
 Person A: Absolutely! How about this weekend?
 
 Person B: Works for me. Looking forward to it!""",
-        "summary": "",
+        "summary": "Person A and Person B discuss a new coffee shop with funky artwork downtown. Person A recommends the caramel macchiato, and Person B prefers black coffee. They plan to visit the cozy spot with bookshelves and bean bags together this weekend.",
     },
     {
         "conversation": """#Person1#: What time is it, Tom?
