@@ -1,0 +1,4 @@
+Model/T5/model.safetensors filter=lfs diff=lfs merge=lfs -text
+Model/T5[[:space:]]RAW/model.safetensors filter=lfs diff=lfs merge=lfs -text
+Model/BART/model.safetensors filter=lfs diff=lfs merge=lfs -text
+Model/BART[[:space:]]RAW/model.safetensors filter=lfs diff=lfs merge=lfs -text
