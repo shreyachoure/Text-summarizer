@@ -1,16 +1,39 @@
-from transformers import T5ForConditionalGeneration, T5Tokenizer
+from transformers import (
+    T5ForConditionalGeneration,
+    T5Tokenizer,
+    BartForConditionalGeneration,
+    BartTokenizer,
+)
+
 import streamlit as st
 
-# Path to your fine-tuned model
-model_path = "./Model/T5"
-token_path = "./Model/T5"
-# Check for GPU availability
-device = "cpu"
+# Define model paths
+model_paths = {
+    "T5 Fine Tuned": "./Model/T5",
+    "T5 RAW": "./T5 RAW",
+    "BART Fine Tuned": "./BART",
+    "BART RAW": "./BART RAW",
+}
 
-# Load tokenizer and model
+# Streamlit app
+st.title("Conversation Summarizer")
 
-tokenizer = T5Tokenizer.from_pretrained(token_path)
-model = T5ForConditionalGeneration.from_pretrained(model_path).to(device)
+# Dropdown to select the model
+selected_model = st.selectbox("Select a Model", list(model_paths.keys()))
+
+tokenizer = None
+tokenizer = None
+if selected_model == "T5 Fine Tuned" or selected_model == "T5 RAW":
+    # Load tokenizer and model based on selection
+    tokenizer = T5Tokenizer.from_pretrained(model_paths[selected_model])
+    model = T5ForConditionalGeneration.from_pretrained(model_paths[selected_model]).to(
+        "cpu"
+    )
+else:
+    tokenizer = BartTokenizer.from_pretrained(model_paths[selected_model])
+    tokenizer = BartForConditionalGeneration.from_pretrained(
+        model_paths[selected_model]
+    ).to("cpu")
 
 
 def summarize(conversation):
@@ -19,7 +42,7 @@ def summarize(conversation):
         return_tensors="pt",
         max_length=512,
         truncation=True,
-    ).to(device)
+    ).to("cpu")
     outputs = model.generate(
         inputs,
         max_length=150,
@@ -31,11 +54,7 @@ def summarize(conversation):
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 
-import streamlit as st
-
-# Streamlit app for testing
-st.title("Conversation Summarizer")
-
+# Input for conversation
 conversation = st.text_area("Enter the conversation here:")
 if st.button("Summarize"):
     summary = summarize(conversation)
