@@ -10,9 +10,9 @@ import streamlit as st
 # Define model paths
 model_paths = {
     "T5 Fine Tuned": "./Model/T5",
-    "T5 RAW": "./T5 RAW",
-    "BART Fine Tuned": "./BART",
-    "BART RAW": "./BART RAW",
+    "T5 RAW": "./Model/T5 RAW",
+    "BART Fine Tuned": "./Model/BART",
+    "BART RAW": "./Model/BART RAW",
 }
 
 # Streamlit app
