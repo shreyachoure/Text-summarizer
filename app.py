@@ -18,16 +18,17 @@ model_paths = {
 
 example_conversations = [
     {
-        "conversation": """#Person1#: Kate, you never believe what's happened.
-#Person2#: What do you mean?
-#Person1#: Masha and Hero are getting divorced.
-#Person2#: You are kidding. What happened?
-#Person1#: Well, I don't really know, but I heard that they are having a separation for 2 months, and filed for divorce.
-#Person2#: That's really surprising. I always thought they are well matched. What about the kids? Who get custody?
-#Person1#: Masha, it seems quiet and makable, no quarrelling about who get the house and stock and then contesting the divorce with other details worked out.
-#Person2#: That's the change from all the back stepping we usually hear about. Well, I still can't believe it, Masha and Hero, the perfect couple. When would they divorce be final?
-#Person1#: Early in the New Year I guess.""",
-        "summary": "#Person1# tells Kate that Masha and Hero get divorced. Kate is surprised because she thought they are perfect couple.",
+        "conversation": """#Person1#: Hello, how are you doing today?
+#Person2#: I ' Ve been having trouble breathing lately.
+#Person1#: Have you had any type of cold lately?
+#Person2#: No, I haven ' t had a cold. I just have a heavy feeling in my chest when I try to breathe.
+#Person1#: Do you have any allergies that you know of?
+#Person2#: No, I don ' t have any allergies that I know of.
+#Person1#: Does this happen all the time or mostly when you are active?
+#Person2#: It happens a lot when I work out.
+#Person1#: I am going to send you to a pulmonary specialist who can run tests on you for asthma.
+#Person2#: Thank you for your help, doctor.""",
+        "summary": "#Person2# has trouble breathing. The doctor asks #Person2# about it and will send #Person2# to a pulmonary specialist.",
     },
     {
         "conversation": """#Person1#: Where are you going for your trip?
@@ -54,10 +55,10 @@ example_conversations = [
 
 
 model_descriptions = {
-    "T5 Fine Tuned": "Description for T5 Fine Tuned...",
-    "T5 RAW": "Description for T5 RAW...",
-    "BART Fine Tuned": "Description for BART Fine Tuned...",
-    "BART RAW": "Description for BART RAW...",
+    "T5 Fine Tuned": "T5 Fine Tuned is trained on DialogSum Dataset to get more accurate generated summary",
+    "T5 RAW": "Original Version of T5 Model",
+    "BART Fine Tuned": "BART Fine Tuned is trained on DialogSum Dataset to get more accurate generated summary",
+    "BART RAW": "Original Version of BART RAW",
 }
 
 # Streamlit app setup
@@ -75,7 +76,7 @@ st.sidebar.write(model_descriptions[selected_model])
 # Example data for average ROGUE scores
 data = {
     "Models": ["T5 Fine Tuned", "T5 RAW", "BART Fine Tuned", "BART RAW"],
-    "Average Scores": [0.75, 0.65, 0.80, 0.70],  # Example scores
+    "Average Scores": [0.39, 0.18, 0.40, 0.19],  # Example scores
 }
 
 # Convert data into a Pandas DataFrame
